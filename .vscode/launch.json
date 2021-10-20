@@ -1,0 +1,53 @@
+{
+    "configurations": [
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "idp-serverless-beta:HelloWorldFunction",
+            "invokeTarget": {
+                "target": "template",
+                "templatePath": "c:\\Users\\maria\\OneDrive\\Escritorio\\GIT_SOYYO\\Soy-Yo-SAML\\IDP\\idp-serverless-beta\\template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "lambda": {
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "lambda-local:HelloWorldFunction (nodejs12.x)",
+            "invokeTarget": {
+                "target": "template",
+                "templatePath": "C:\\Users\\maria\\AppData\\Local\\Programs\\Microsoft VS Code\\${workspaceFolder}\\lambda-local\\template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "lambda": {
+                "payload": {},
+                "environmentVariables": {},
+                "runtime": "nodejs12.x"
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "API lambda-local:HelloWorldFunction (nodejs12.x)",
+            "invokeTarget": {
+                "target": "api",
+                "templatePath": "C:\\Users\\maria\\AppData\\Local\\Programs\\Microsoft VS Code\\${workspaceFolder}\\lambda-local\\template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "api": {
+                "path": "/hello",
+                "httpMethod": "get",
+                "payload": {
+                    "json": {}
+                }
+            },
+            "lambda": {
+                "runtime": "nodejs12.x"
+            }
+        }
+    ]
+}
